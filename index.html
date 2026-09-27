@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#05030b" />
+    <meta name="description" content="An interactive perception study inside a living toroidal channel." />
+    <title>The Inner Ring — A Perception Instrument</title>
+  </head>
+  <body>
+    <main id="app">
+      <section class="threshold" id="threshold">
+        <div class="threshold__field" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <p class="eyebrow">A perception instrument</p>
+        <h1>The<br /><em>Inner</em> Ring</h1>
+        <p class="threshold__copy">
+          Take a position inside a torus under pressure. The walls turn, step,
+          and remember an outside you cannot see.
+        </p>
+        <button class="enter-button" id="enter-button">
+          <span>Enter the channel</span><b aria-hidden="true">↗</b>
+        </button>
+        <p class="threshold__note">Move slowly. The membranes become most articulate near contact.</p>
+      </section>
+
+      <section class="instrument is-hidden" id="instrument">
+        <div id="scene" role="img" aria-label="A moving first-person view from inside a deforming toroidal channel"></div>
+        <div class="contact-veil" id="contact-veil" aria-hidden="true"></div>
+        <div class="grain" aria-hidden="true"></div>
+
+        <header class="topbar">
+          <div class="identity">
+            <span class="identity__glyph" aria-hidden="true">◌</span>
+            <div><b>THE INNER RING</b><small>PERCEPTION / PRESSURE / POSTURE</small></div>
+          </div>
+          <div class="state"><i></i><span id="state-label">CENTERED IN THE CHANNEL</span></div>
+          <button class="icon-button" id="pause-button" aria-label="Pause simulation">Ⅱ</button>
+        </header>
+
+        <aside class="witness glass">
+          <p class="eyebrow">Present condition</p>
+          <h2 id="condition-title">The walls move around you.</h2>
+          <p id="condition-copy">
+            The channel is continuous. What feels like forward and back is a position inside its living cross-section.
+          </p>
+          <dl>
+            <div><dt>POSITION</dt><dd id="position-readout">0.00</dd></div>
+            <div><dt>CLEARANCE</dt><dd id="clearance-readout">100%</dd></div>
+            <div><dt>FIELD LOAD</dt><dd id="load-readout">42%</dd></div>
+          </dl>
+        </aside>
+
+        <aside class="controls glass" id="controls-panel">
+          <div class="controls__heading">
+            <div><p class="eyebrow">Variables</p><h3>Tune the encounter</h3></div>
+            <button id="controls-toggle" aria-label="Collapse controls">−</button>
+          </div>
+          <div class="controls__body">
+            <label class="control">
+              <span><b>Position</b><output id="position-output">center</output></span>
+              <input id="position" type="range" min="-0.96" max="0.96" step="0.01" value="0" />
+              <small>Move backward or forward across the hollow center.</small>
+            </label>
+            <label class="control">
+              <span><b>Spine</b><output id="spine-output">neutral</output></span>
+              <input id="spine" type="range" min="-1" max="1" step="0.01" value="0" />
+              <small>Posture changes the horizon and couples your body to the field.</small>
+            </label>
+            <label class="control">
+              <span><b>Pressure</b><output id="pressure-output">42%</output></span>
+              <input id="pressure" type="range" min="0.05" max="1" step="0.01" value="0.42" />
+              <small>The force of the unseen medium outside the ring.</small>
+            </label>
+            <label class="control">
+              <span><b>Teeth</b><output id="teeth-output">24</output></span>
+              <input id="teeth" type="range" min="8" max="48" step="1" value="24" />
+              <small>How finely the membrane resolves itself into steps.</small>
+            </label>
+            <label class="control">
+              <span><b>Turning</b><output id="turning-output">0.7×</output></span>
+              <input id="turning" type="range" min="0" max="2" step="0.05" value="0.7" />
+            </label>
+            <div class="actions">
+              <button id="pulse-button">Pressure pulse</button>
+              <button id="reset-button">Return to center</button>
+            </div>
+          </div>
+        </aside>
+
+        <div class="axis" aria-hidden="true"><span>BACK</span><i><b id="axis-marker"></b></i><span>FRONT</span></div>
+        <p class="gesture">drag to look · scroll or W/S to move · double-click to recenter your gaze</p>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
