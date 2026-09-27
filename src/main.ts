@@ -170,7 +170,7 @@ class InnerRing {
     );
     const material = new THREE.ShaderMaterial({
       uniforms: this.uniforms,
-      side: THREE.BackSide,
+      side: THREE.DoubleSide,
       depthWrite: true,
       vertexShader: `
         precision highp float;
@@ -329,13 +329,13 @@ class InnerRing {
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
     const material = new THREE.PointsMaterial({
-      size: MOBILE ? .035 : .028,
+      size: MOBILE ? 1.35 : 1.7,
       transparent: true,
       opacity: .58,
       vertexColors: true,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
-      sizeAttenuation: true,
+      sizeAttenuation: false,
     });
     return new THREE.Points(geometry, material);
   }
