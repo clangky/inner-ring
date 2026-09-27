@@ -4,9 +4,10 @@
 
 ## Current state
 
-The first complete implementation is built locally and prepared for public
-release at <https://clangky.github.io/inner-ring/>. The application is a
-first-person Three.js experience inside a shader-deformed toroidal channel.
+The first complete implementation is public and live at
+<https://clangky.github.io/inner-ring/>. Source is available at
+<https://github.com/clangky/inner-ring>. The application is a first-person
+Three.js experience inside a shader-deformed toroidal channel.
 
 Implemented controls cover observer position, spine/posture, exterior pressure,
 gear-tooth density, turning speed, pause, reset, free gaze, and a temporary
@@ -18,13 +19,18 @@ small screens, and reduced-motion preferences.
 - `npm run build` passes.
 - `npm audit` reports no known vulnerabilities.
 - A scoped secret scan found no credentials or private material.
-- The production bundle is static and ready for GitHub Pages.
-- Public repository, Actions deployment, and live browser acceptance remain to
-  be completed in this release session.
+- GitHub Pages deployed successfully from the `main` branch through Actions.
+- The public document and production assets return HTTP 200.
+- Live browser acceptance passed at desktop and mobile sizes.
+- Center, anterior membrane, and posterior membrane states were visually
+  checked; position, spine, pressure, tooth density, pause/resume, pressure
+  pulse, and reset were exercised successfully.
+- The acceptance pass caught an interior-wall culling defect and an oversized
+  near-camera particle; both were corrected in commit `f874a35` and verified
+  after redeployment.
 
 ## Next step
 
-Publish the repository, confirm the Pages workflow, and perform the first
-visual/interaction review against the public build. After Merl's first
-experiential review, refine the spatial interpretation rather than adding
-features speculatively.
+Merl should make the first experiential review from the live site. Refine the
+spatial interpretation from that reaction rather than adding features
+speculatively.
